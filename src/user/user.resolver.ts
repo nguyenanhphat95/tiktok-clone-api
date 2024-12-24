@@ -61,6 +61,11 @@ export class UserResolver {
     return 'This is protected data';
   }
 
+  @Query(() => String)
+  hello() {
+    return 'Hello data';
+  }
+
   @Mutation(() => String)
   async refreshToken(@Context() context: { req: Request; res: Response }) {
     try {

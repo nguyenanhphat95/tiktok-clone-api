@@ -25,4 +25,7 @@ export class LoginResponse {
 
   @Field(() => ErrorType, { nullable: true })
   error?: ErrorType;
+
+  @Field(() => String, { nullable: false })
+  accessToken: string;
 }

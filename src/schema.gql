@@ -18,6 +18,7 @@ input LoginDto {
 }
 
 type LoginResponse {
+  accessToken: String!
   error: ErrorType
   user: User!
 }

@@ -62,7 +62,8 @@ export class AuthService {
       { ...payload },
       {
         secret: this.configService.get<string>('ACCESS_TOKEN_SECRET'),
-        expiresIn: '150sec',
+        expiresIn: '7d',
+        // expiresIn: '150sec',
       },
     );
 
@@ -76,7 +77,7 @@ export class AuthService {
       httpOnly: true,
     });
 
-    return { user };
+    return { user, accessToken };
   }
   async validateUser(loginDto: LoginDto): Promise<any> {
     const user = await this.prisma.user.findUnique({
